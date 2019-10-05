@@ -29,8 +29,8 @@ ui <- fluidPage(
                   value = 50,
                   min = 1,
                   max = 100),
-      br(),
-      downloadButton("bajarEjemplo", "Bajar tabla de ejemplo"),
+      #br(),
+      #downloadButton("bajarEjemplo", "Bajar tabla de ejemplo"),
       br(),
       uiOutput("botonBajarProyeccion")
       
@@ -66,7 +66,7 @@ server <- function(input, output) {
       return("flujo_ejemplo.csv")
     },
     content = function(file) {
-      sample <- loadCsv("sample.csv")
+      sample <- loadCsv("flujo_ejemplo.csv")
       write.csv(sample, file, row.names = FALSE)
     }
   )

@@ -10,7 +10,7 @@ tryParseNumeric <- function(data) {
 
 loadCsv <- function(path) {
   df <- read.csv(path, dec = ".")
-  df$Fecha <- as.Date(df$Fecha)
+  df$Fecha <- as.Date(df$Fecha, format = "%d-%m-%Y")
   df$Capital <- tryParseNumeric(df$Capital)
   df$Rendimiento <- tryParseNumeric(df$Rendimiento)
   df$Flujo <- tryParseNumeric(df$Flujo)
